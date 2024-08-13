@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Règles - QuickHit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #007BFF;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Règles du Jeu - QuickHit</h1>
+    <p>Bienvenue dans QuickHit ! Le but du jeu est de tester vos réflexes en cliquant sur les carrés qui apparaissent aléatoirement sur l'écran. Vous avez 20 carrés à cliquer le plus rapidement possible.</p>
+    <p>Le jeu propose quatre niveaux de difficulté :</p>
+    <ul>
+        <li><strong>Facile :</strong> Les carrés sont grands, ce qui rend les clics plus simples.</li>
+        <li><strong>Moyen :</strong> Les carrés sont de taille moyenne, demandant plus de précision.</li>
+        <li><strong>Difficile :</strong> Les carrés sont plus petits, augmentant la difficulté.</li>
+        <li><strong>Très Difficile :</strong> Les carrés sont très petits, testant vos réflexes au maximum.</li>
+    </ul>
+    <p>Chaque niveau de difficulté a son propre classement. Essayez de battre votre meilleur temps pour atteindre le sommet du classement !</p>
+    
+    <button class="btn" onclick="goToMenu()">Retour</button>
+
+    <script>
+        function goToMenu() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

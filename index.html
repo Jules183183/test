@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickHit - Accueil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        #userPseudo {
+            margin-right: 20px;
+        }
+        main {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #007BFF;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QuickHit</h1>
+        <div id="userPseudo">Invité</div>
+    </header>
+
+    <main>
+        <button onclick="window.location.href='regles.html'">Règles</button>
+        <button onclick="window.location.href='choix_difficulte.html'">Jouer</button>
+    </main>
+
+    <script>
+        window.onload = function() {
+            const pseudo = localStorage.getItem('pseudo');
+            if (pseudo) {
+                document.getElementById('userPseudo').textContent = pseudo;
+            } else {
+                document.getElementById('userPseudo').textContent = 'Invité';
+            }
+        };
+
+        function loginUser() {
+            const pseudo = document.getElementById('pseudo').value;
+            const password = document.getElementById('password').value;
+            
+            // Ajouter la logique de vérification ici...
+
+            // Si les informations sont correctes
+            localStorage.setItem('pseudo', pseudo);
+            window.location.href = 'index.html'; // Rediriger vers la page d'accueil
+        }
+    </script>
+</body>
+</html>

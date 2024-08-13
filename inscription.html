@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        input {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            width: 200px;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Inscription</h1>
+        <input type="text" id="pseudo" placeholder="Pseudo" required>
+        <input type="password" id="password" placeholder="Mot de passe" required>
+        <button onclick="inscrire()">S'inscrire</button>
+    </div>
+
+    <script>
+        function inscrire() {
+            const pseudo = document.getElementById('pseudo').value;
+            const password = document.getElementById('password').value;
+
+            if (pseudo === "" || password === "") {
+                alert("Veuillez remplir tous les champs.");
+                return;
+            }
+
+            // Vérification si le pseudo existe déjà
+            if (localStorage.getItem(pseudo)) {
+                alert("Ce pseudo est déjà pris. Veuillez en choisir un autre.");
+                return;
+            }
+
+            // Stocker le pseudo et le mot de passe
+            localStorage.setItem(pseudo, password);
+            alert("Inscription réussie !");
+            window.location.href = 'connexion.html';
+        }
+    </script>
+</body>
+</html>

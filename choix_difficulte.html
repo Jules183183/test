@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickHit - Choix de la Difficulté</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        #userPseudo {
+            margin-right: 20px;
+        }
+        main {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #007BFF;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>QuickHit</h1>
+        <div id="userPseudo">Invité</div>
+    </header>
+
+    <main>
+        <button onclick="selectDifficulty('Facile')">Facile</button>
+        <button onclick="selectDifficulty('Moyen')">Moyen</button>
+        <button onclick="selectDifficulty('Difficile')">Difficile</button>
+        <button onclick="selectDifficulty('Très Difficile')">Très Difficile</button>
+    </main>
+
+    <script>
+        window.onload = function() {
+            const pseudo = localStorage.getItem('pseudo');
+            if (pseudo) {
+                document.getElementById('userPseudo').textContent = pseudo;
+            } else {
+                document.getElementById('userPseudo').textContent = 'Invité';
+            }
+        };
+
+        function selectDifficulty(difficulty) {
+            localStorage.setItem('difficulty', difficulty);
+            window.location.href = 'jeu.html';
+        }
+    </script>
+</body>
+</html>
